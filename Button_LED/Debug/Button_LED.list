@@ -388,7 +388,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin))
+	  if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin))			//Check if Button Pressed
  8000518:	f44f 6100 	mov.w	r1, #2048	; 0x800
  800051c:	480a      	ldr	r0, [pc, #40]	; (8000548 <main+0x40>)
  800051e:	f000 fc51 	bl	8000dc4 <HAL_GPIO_ReadPin>
@@ -396,7 +396,7 @@ int main(void)
  8000524:	2b00      	cmp	r3, #0
  8000526:	d008      	beq.n	800053a <main+0x32>
 	  {
-		  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);			//if button pressed set led ON
  8000528:	2201      	movs	r2, #1
  800052a:	2102      	movs	r1, #2
  800052c:	4806      	ldr	r0, [pc, #24]	; (8000548 <main+0x40>)
@@ -409,12 +409,12 @@ int main(void)
 	  }
 	  else
 	  {
-		  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);			//if button not pressed sed led OFF
  800053a:	2200      	movs	r2, #0
  800053c:	2102      	movs	r1, #2
  800053e:	4802      	ldr	r0, [pc, #8]	; (8000548 <main+0x40>)
  8000540:	f000 fc58 	bl	8000df4 <HAL_GPIO_WritePin>
-	  if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin))
+	  if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin))			//Check if Button Pressed
  8000544:	e7e8      	b.n	8000518 <main+0x10>
  8000546:	bf00      	nop
  8000548:	40022000 	.word	0x40022000
