@@ -1,1 +1,4 @@
 1620082931506	Delete resource 'Button_LED'
+1620093029267	Delete resource 'ADC_HAL'
+1620162366680	Delete 3 resources
+1620162369560	Delete resource 'i2c_HAL/Core/Src/ssd1306_fonts.c'
